@@ -9,6 +9,7 @@
   <url>http://maven.apache.org</url>
     <modules>
         <module>NewSpringDemo</module>
+        <module>Geometry</module>
     </modules>
     <dependencies>
     <dependency>
