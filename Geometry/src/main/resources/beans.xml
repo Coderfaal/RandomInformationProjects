@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean name ="rect" class="com.tcs.geometry.Rectangle">
+    <bean name ="rect" class="com.tcs.geometry.Rectangle" primary="true">
         <constructor-arg value="32.57"></constructor-arg>
         <constructor-arg value="32.57"></constructor-arg>
     </bean>
@@ -14,7 +14,7 @@
         <property name="radius" value="23.57"></property><!-- whenever we use Property(setter injection for particular class then we have to include default constructor for that class -->
     </bean>
 
-    <bean name="util" class="com.tcs.geometry.Mesuration">
-        <constructor-arg ref="rect"></constructor-arg>
+    <bean name="util" class="com.tcs.geometry.Mesuration" autowire="byType">
+       <!-- <constructor-arg ref="rect"></constructor-arg>-->
     </bean>
 </beans>

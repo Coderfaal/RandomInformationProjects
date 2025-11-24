@@ -1,7 +1,7 @@
 package com.tcs.geometry;
 
 public interface Shape {
-     double  area() ;
+      double  area() ;
 
-    double perimeter();
+     double perimeter();
 }

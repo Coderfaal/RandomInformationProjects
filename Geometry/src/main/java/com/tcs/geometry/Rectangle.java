@@ -36,7 +36,7 @@ public class Rectangle implements Shape{
     }
 
     public double perimeter() {
-        return breadth;
+        return (2*(length*breadth));
 
     }
 
