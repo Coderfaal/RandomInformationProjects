@@ -6,6 +6,7 @@ public class Rectangle implements Shape{
     private double breadth;
 
     public Rectangle() {
+        System.out.println("From Rectangle Default Constructor()");
 
     }
     public Rectangle(double length,double breadth) {

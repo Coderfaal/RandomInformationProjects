@@ -5,16 +5,18 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean name ="rect" class="com.tcs.geometry.Rectangle" primary="true">
+    <bean id= "rectId" name ="r1,r2,rect,shape" class="com.tcs.geometry.Rectangle">
         <constructor-arg value="32.57"></constructor-arg>
-        <constructor-arg value="32.57"></constructor-arg>
+        <constructor-arg value="75.46"></constructor-arg>
     </bean>
 
-    <bean name="circle" class="com.tcs.geometry.Circle">
+    <bean name="circle" class="com.tcs.geometry.Circle"  primary="true">
         <property name="radius" value="23.57"></property><!-- whenever we use Property(setter injection for particular class then we have to include default constructor for that class -->
     </bean>
 
-    <bean name="util" class="com.tcs.geometry.Mesuration" autowire="byType">
-       <!-- <constructor-arg ref="rect"></constructor-arg>-->
+    <bean name="util" class="com.tcs.geometry.Mesuration" autowire="constructor"
+          init-method="myInit" destroy-method="myDestory">
+       <!-- <constructor-arg ref="rect"></constructor-arg> if this is given it causes NullPointerException-->
+        <property name="shape" ref="rectId"></property>
     </bean>
 </beans>
